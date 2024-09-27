@@ -1,10 +1,11 @@
-function solution(arr){
-    var stackArr = [];
+function solution(arr) {
+    var stack = [];
     
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] !== arr[i + 1]){
-           stackArr.push(arr[i]);
-        }        
+    for (var i = 0; i < arr.length; i++) {
+        if (stack.length === 0 || stack[stack.length - 1] !== arr[i]) {
+            stack.push(arr[i]);
+        }
     }
-    return stackArr;
+    
+    return stack;
 }
