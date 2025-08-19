@@ -1,9 +1,6 @@
 function solution(arr, divisor) {
-    const emptyCase = [-1];
+    const resultArr = [-1];
+    const filterdArr = arr.sort((a, b) => a - b).filter((n) => n % divisor === 0);
     
-    const filterdArr = arr.filter((num) => {
-       return num % divisor === 0;
-    }).sort((a, b) => {return a - b});
-    
-    return filterdArr.length <= 0 ? emptyCase : filterdArr;
+    return filterdArr.length ? filterdArr : resultArr;
 }
